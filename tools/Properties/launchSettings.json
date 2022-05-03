@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "apimtemplate": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "sourceApimName": "oink-dev-001",
+  "destinationApimName": "oink-prod-001",
+  "resourceGroup": "lz-apps-mgmt-oink",
+  "fileFolder": "./apimartifacts",
+  "splitAPIs": "true"
+}
