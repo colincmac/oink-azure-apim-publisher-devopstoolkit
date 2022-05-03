@@ -38,7 +38,7 @@ jobs:
         run: |
           ls
           chmod +x ${{ GITHUB.WORKSPACE }}/ArmTemplates
-          ${{ GITHUB.WORKSPACE }}/ArmTemplates extract --extractorConfig ../extract.dev.json
+          ${{ GITHUB.WORKSPACE }}/ArmTemplates extract --extractorConfig extract.dev.json
 
       - name: publish artifact
         uses: actions/upload-artifact@v2
