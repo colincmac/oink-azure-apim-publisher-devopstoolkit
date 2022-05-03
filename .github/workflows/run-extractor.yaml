@@ -36,8 +36,9 @@ jobs:
           AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           AZURE_RESOURCE_GROUP_NAME: ${{ secrets.AZURE_RESOURCE_GROUP_NAME }}
         run: |
-          chmod +x ${{ GITHUB.WORKSPACE }}/toolkit
-          ${{ GITHUB.WORKSPACE }}/toolkit/ArmTemplates extract --extractorConfig ../extract.dev.json
+          ls
+          chmod +x ${{ GITHUB.WORKSPACE }}/ArmTemplates
+          ${{ GITHUB.WORKSPACE }}/ArmTemplates extract --extractorConfig ../extract.dev.json
 
       - name: publish artifact
         uses: actions/upload-artifact@v2
