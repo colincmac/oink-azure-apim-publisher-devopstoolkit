@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apiVersionSets",
+      "name": "[concat(parameters('apimServiceName'), '/62718af5e50c691227848c9a')]",
+      "properties": {
+        "displayName": "Echo Versioned",
+        "versioningScheme": "Segment"
+      }
+    }
+  ]
+}
