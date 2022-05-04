@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "name": "[concat(parameters('apimServiceName'), '/echo-versioned')]",
+      "dependsOn": [],
+      "properties": {
+        "description": "",
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "subscriptionKeyParameterNames": {
+          "header": "Ocp-Apim-Subscription-Key",
+          "query": "subscription-key"
+        },
+        "apiRevision": "1",
+        "apiVersion": "v1",
+        "isCurrent": true,
+        "apiVersionSetId": "[concat(resourceId('Microsoft.ApiManagement/service', parameters('apimServiceName')), '/apiVersionSets/62718af5e50c691227848c9a')]",
+        "subscriptionRequired": true,
+        "displayName": "Echo Versioned",
+        "serviceUrl": "http://echoapi.cloudapp.net/api",
+        "path": "echo-v",
+        "protocols": [
+          "https"
+        ]
+      }
+    }
+  ]
+}
